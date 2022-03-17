@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Cyan &amp; family escape war</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<style>
+/* Faq-Page template adapted from https://github.com/Emilsone/Faq-Page by Ezekiel Lawson */
+body{
+    font-family: 'Lexend', sans-serif;
+}
+.faq-heading{
+    border-bottom: #777;
+    padding: 20px 60px;
+}
+.faq-container{
+	display:flex;
+    justify-content:center;
+    flex-direction: column; 
+}
+.hr-line{ 
+	width:60%; 
+    margin:auto; 
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+   width: 50%; 
+   /* padding: auto; */
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+/* Unicode character for "plus" sign (+) */
+.faq-page:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+/* Unicode character for "minus" sign (-) */
+.active:after {
+    content: "\2796";
+}
+</style>
+</head>
+
+<body>
+    <main>
+        <h1 class="faq-heading">Help Cyan &amp; family escape war</h1>
+        <section class="faq-container">
+            <div class="faq-one">
+                <h1 class="faq-page">What is the fundraiser for?</h1>
+                <div class="faq-body">
+                    <p>We're raising funds to help <a href="https://twitter.com/cyan_square" target="_blank">cyan_square's</a> family migrate from the Ukrainian warzone</p><br/>
+                    <p>We are gathering talented artists together to livestream their craft during this fundraising event.</p><br/>
+                    <p>All are welcome to hang out, chat &amp; donate to a good cause.</p><br/>
+                    <p>The livestream will host on <a href="https://piczel.tv/watch/Spurple2" target="_blank">Piczel</a> starting at <time datetime="1970-01-01T10:00+10:00">TBA</time> for approximately 8 hours.</p><br/>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-two">
+                <h1 class="faq-page">How can I help?</h1>
+                <div class="faq-body">
+                    <p><a href="https://ko-fi.com/cyan_square" target="_blank">Donate</a> to cyan_square &amp; family via Ko-fi.</p><br/>
+                    <p>If you donate $6 or more, you may also request a commissioned sketch from our active artists in the livestream.<br/>
+                    	<i><a href="#com-request">How does this work?</a></i></p><br/>
+                </div>
+            </div>
+            <hr class="hr-line">
+          
+			<img src="https://pbs.twimg.com/media/FNB9C15XwAET9Bu?format=png&name=900x900" alt="todo"/>
+
+            <div class="faq-three">
+                <h1 class="faq-page" id="com-request">How can I donate to request a commission?</h1>
+                <div class="faq-body">
+                    <p>Please remember this is a donation - not a purchase.</p><br/>
+                    <p>Our artists will try to work through as many requests as possible in the time limit, but there is no guarantee that your request will be fulfilled.</p><br/>
+                    <dl>
+                      <dt>Select "Commission me" on the <a href="https://ko-fi.com/cyan_square" target="_blank">Ko-Fi</a> donation page</dt>
+                      <dd>Supply a brief description of the sketch you want to see</dd>
+                      <dd><i><a href="#com-rules">What is or isn't allowed?</a></i></dd>
+
+                      <dt>Your commission will be immediately catalogued</dt>
+                      <dd>You can view these on our <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello</a> along with the requests of other donators</dd>
+
+                      <dt>Commission requests will be chosen by a random artist<dt>
+					  <dd>Watch them drawn live in our <a href="https://piczel.tv/watch/Spurple2" target="_blank">livestream</a></dd>
+                  </dl>
+                </div>
+            </div>
+            <hr class="hr-line">
+            
+            <div class="faq-four">
+                <h1 class="faq-page">How will I know if my commission was chosen?</h1>
+                <div class="faq-body">
+                    <p>All requests will be publicly visible on our <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello board</a>.</p><br/>
+                    <p>Drawings in progress will be shown under an artist's column.</p><br/>
+                    <p>All finished drawings will be shown under the completed column.</p><br/>
+                    <p>These will remain available after the stream!</p><br/>
+                </div>
+            </div>
+            <hr class="hr-line">
+     
+            <div class="faq-five">
+                <h1 class="faq-page" >Will I be contacted if my commission is chosen/finished?</h1>
+                <div class="faq-body">
+                    <p>You will have to manually check the <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello board</a> to see if your request has been fulfilled.</p><br/>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-six">
+                <h1 class="faq-page" >I donated last stream and got an uncompleted/completed commission, can I submit more requests?</h1>
+                <div class="faq-body">
+                    <p>Multiple requests are okay, but each will require an additional donation.</p><br/>
+					<p>Any incompleted requests from a previous event will not carry over to future events.</p><br/>
+                </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-seven">
+                <h1 class="faq-page" id="com-rules">What is or isn't allowed in commission requests?</h1>
+                <div class="faq-body">
+                    <p>Try to describe in 15 words or less, with attached image references.</p><br/>
+                    <p>Complex requests may be simplfied due to time constraints and the nature of sketch quality.</p><br/>
+                    <p>Commissions will be chosen by unbiased random selection by any artists participating in the livestream.</p><br/>
+                    <p>Sketches can be SFW or tasteful NSFW pin-ups.</p><br/>
+                    <p>Maximum 2 characters per request.</p><br/>
+                    <p>Any requests with the following themes will be rejected; lolicon/shotacon, pedophilia, bestiality, necrophilia, incest, rape, scat, watersports, guro/gore</p><br/>
+                    <p>Each artist has ultimate right to refuse selection of a commission, such as requests with offensive content.</p><br/>
+                </div>
+            </div>
+            <hr class="hr-line">
+                        
+   			<div class="faq-final">
+                <h1 class="faq-page">I have a question that isn't answered here!</h1>
+                <div class="faq-body">
+                    <p>Feel free to ask one of our helpful event staff in <a href="https://piczel.tv/watch/Spurple2" target="_blank">Piczel</a> stream chat while the event is active.</p><br/>
+                </div>
+            </div>
+
+        </section>
+          
+          <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+          <script>
+            kofiWidgetOverlay.draw('cyan_square', {
+              'type': 'floating-chat',
+              'floating-chat.donateButton.text': 'Donate',
+              'floating-chat.donateButton.background-color': '#ffffff',
+              'floating-chat.donateButton.text-color': '#323842'
+            });
+          </script>
+
+    </main>
+    <script>
+    var faq = document.getElementsByClassName("faq-page");
+    var i;
+
+    for (i = 0; i < faq.length; i++) {
+        faq[i].addEventListener("click", function () {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var body = this.nextElementSibling;
+            if (body.style.display === "block") {
+                body.style.display = "none";
+            } else {
+                body.style.display = "block";
+            }
+        });
+    }
+        
+    /* Event starting datetime in unix format as human-readable format */
+    var unixTime = 0;
+    var isoTime = new Date(unixTime).toISOString()
+    timeEl.textContent = new Date(isoTime).toLocaleString();
+    timeEl.setAttribute('datetime', isoTime)
+    </script>
+</body>
+</html>
