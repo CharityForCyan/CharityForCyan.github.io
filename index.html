@@ -39,9 +39,7 @@ body{
 }
 .faq-body{
     margin: auto;
-    /* text-align: center; */
-   width: 50%; 
-   /* padding: auto; */
+	width: 50%; 
 }
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
@@ -67,10 +65,69 @@ body{
 .active:after {
     content: "\2796";
 }
+.commTableTier3 {
+	background-color: #F6AB52;
+}
+.commTableTier2 {
+	background-color: #FFDC4E;
+}
+.commTableTier1 {
+	background-color: #F8FFD5;
+}
+table {
+    border-collapse: collapse;
+    column-gap: 2em;
+}
+td {
+	padding: 0 15px;
+}
+dt{
+    margin-top: 20px; 
+}
+dt {
+	clear: both; 
+}
+img {
+	margin: auto;
+	width: 50%; 
+}
 </style>
+
+<script>
+
+/* put vars in body text */
+/* eg: <span id="comTier3"></span> */
+function updateCommRequestElement(elemClassName, value)
+{
+    var faq = document.getElementsByClassName(elemClassName);
+    var i;
+
+    for (i = 0; i < faq.length; i++) {
+    	faq[i].innerHTML = value;
+    }
+}
+
+/* Keep tiered donation price thresholds in one place */
+function updateAllCommRequestValues() {
+
+  var tier3CommDonationUsd = 18;
+  var tier2CommDonationUsd = 48;
+  var tier1CommDonationUsd = 78;
+  var additionalCharacterFactor = 1.5;
+  
+  updateCommRequestElement("commTier3", tier3CommDonationUsd);
+  updateCommRequestElement("commTier2", tier2CommDonationUsd);
+  updateCommRequestElement("commTier1", tier1CommDonationUsd);
+  updateCommRequestElement("commTier3mul", tier3CommDonationUsd * additionalCharacterFactor);
+  updateCommRequestElement("commTier2mul", tier2CommDonationUsd * additionalCharacterFactor);
+  updateCommRequestElement("commTier1mul", tier1CommDonationUsd * additionalCharacterFactor);
+}
+
+</script>
+
 </head>
 
-<body>
+<body onload="updateAllCommRequestValues()">
     <main>
         <h1 class="faq-heading">Help Cyan &amp; family escape war</h1>
         <section class="faq-container">
@@ -89,30 +146,59 @@ body{
                 <h1 class="faq-page">How can I help?</h1>
                 <div class="faq-body">
                     <p><a href="https://ko-fi.com/cyan_square" target="_blank">Donate</a> to cyan_square &amp; family via Ko-fi.</p><br/>
-                    <p>If you donate $6 or more, you may also request a commissioned sketch from our active artists in the livestream.<br/>
+                    <p>If you donate US$<span class="commTier3"></span> or more, you may also request a commissioned sketch from our active artists in the livestream.<br/>
                     	<i><a href="#com-request">How does this work?</a></i></p><br/>
                 </div>
             </div>
             <hr class="hr-line">
           
-			<img src="https://pbs.twimg.com/media/FNB9C15XwAET9Bu?format=png&name=900x900" alt="todo"/>
+			<img src="mural.png" alt="Mural image by cyan_square"/>
 
             <div class="faq-three">
                 <h1 class="faq-page" id="com-request">How can I donate to request a commission?</h1>
                 <div class="faq-body">
-                    <p>Please remember this is a donation - not a purchase.</p><br/>
-                    <p>Our artists will try to work through as many requests as possible in the time limit, but there is no guarantee that your request will be fulfilled.</p><br/>
+                    <p><b>Please remember this is a donation - not a purchase.</b></p>
+                                         
                     <dl>
-                      <dt>Select "Commission me" on the <a href="https://ko-fi.com/cyan_square" target="_blank">Ko-Fi</a> donation page</dt>
-                      <dd>Supply a brief description of the sketch you want to see</dd>
+                      <dt>Donate US$<span class="commTier3"></span> or more via <a href="https://ko-fi.com/cyan_square" target="_blank">Ko-Fi</a> or the donation widget on this page to request a commissioned sketch</dt>
+                      
+                      <dt>In the donation message write a brief description of the sketch you want to see</dt>
                       <dd><i><a href="#com-rules">What is or isn't allowed?</a></i></dd>
 
-                      <dt>Your commission will be immediately catalogued</dt>
-                      <dd>You can view these on our <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello</a> along with the requests of other donators</dd>
+                      <dt>Your donation request will be immediately catalogued in our <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello</a></dt>
 
-                      <dt>Commission requests will be chosen by a random artist<dt>
+                      <dt>Requests will be chosen by a random artist</dt>
 					  <dd>Watch them drawn live in our <a href="https://piczel.tv/watch/Spurple2" target="_blank">livestream</a></dd>
                   </dl>
+                    
+                    <p>To encourage higher donation, you may request a more complex drawing by donating over the thresholds outlined below:</p><br/>
+                    <table>
+                    	<thead>
+                        </thead>
+                        <tbody>
+                        	<tr class="commTableTier3">
+                            	<td>US$<span class="commTier3"></span>+</td>
+                                <td>Single character <b>black &amp; white</b> sketch, shading, bust only</td>
+                            	<td>US$<span class="commTier3mul"></span>+</td>
+                                <td>Two characters</td>
+                            </tr>
+                            <tr class="commTableTier2">
+                            	<td>US$<span class="commTier2"></span>+</td>
+                                <td>Single character <b>color</b> sketch, shading, thigh bust or chibi only</td>
+                            	<td>US$<span class="commTier2mul"></span>+</td>
+                                <td>Two characters</td>
+                            </tr>
+                            <tr class="commTableTier1">
+                            	<td>US$<span class="commTier1"></span>+</td>
+                                <td>Single character <b>color</b> sketch, shading, <b>full body</b></td>
+                            	<td>US$<span class="commTier1mul"></span>+</td>
+                                <td>Two characters</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                   
+                   <p>At 5 hours from the planned beginning of the stream we will stop accepting new commission requests.</p>
+                   
                 </div>
             </div>
             <hr class="hr-line">
@@ -120,10 +206,14 @@ body{
             <div class="faq-four">
                 <h1 class="faq-page">How will I know if my commission was chosen?</h1>
                 <div class="faq-body">
-                    <p>All requests will be publicly visible on our <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello board</a>.</p><br/>
-                    <p>Drawings in progress will be shown under an artist's column.</p><br/>
-                    <p>All finished drawings will be shown under the completed column.</p><br/>
-                    <p>These will remain available after the stream!</p><br/>
+                	<dl>
+                      <dt>All requests will be public on <a href="https://trello.com/b/bvCtkqnP/charity-stream-sketchlist" target="_blank">Trello board</a>.<br/>
+                      <dd>Drawings in progress will be shown under an artist's column.</dd>
+                      <dd>All finished drawings will be shown under the completed column.</dd>
+                      <dd>The Trello board will remain publicly accessible after the event.</dd>
+                    </dl>
+                    
+                    <p><b>Please note</b> that our artists will try to work through as many requests as possible in the time limit, but there is no guarantee that we can fulfil every request.</p>
                 </div>
             </div>
             <hr class="hr-line">
@@ -148,9 +238,13 @@ body{
             <div class="faq-seven">
                 <h1 class="faq-page" id="com-rules">What is or isn't allowed in commission requests?</h1>
                 <div class="faq-body">
-                    <p>Try to describe in 15 words or less, with attached image references.</p><br/>
-                    <p>Complex requests may be simplfied due to time constraints and the nature of sketch quality.</p><br/>
-                    <p>Commissions will be chosen by unbiased random selection by any artists participating in the livestream.</p><br/>
+                	<p>One donation = one sketch request.</p><br/>
+                    <p>You may donate multiple times for multiple sketch requests.</p><br/>
+                    <p>Try to describe your drawing request in 15 words or less.</p><br/>
+                 	<p>You may add image references with links to off-site images.</p><br/>
+              		<p>You may remain anonymous.</p><br/>
+                    <p>Over-complex requests may be simplfied due to time constraints and the nature of sketch quality.</p><br/>
+                    <p>Commissions will be chosen via unbiased selection by any artists participating in the livestream.</p><br/>
                     <p>Sketches can be SFW or tasteful NSFW pin-ups.</p><br/>
                     <p>Maximum 2 characters per request.</p><br/>
                     <p>Any requests with the following themes will be rejected; lolicon/shotacon, pedophilia, bestiality, necrophilia, incest, rape, scat, watersports, guro/gore</p><br/>
