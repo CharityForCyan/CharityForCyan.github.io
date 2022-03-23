@@ -100,7 +100,7 @@ img {
 
 /* put vars in body text */
 /* eg: <span id="comTier3"></span> */
-function updateCommRequestElement(elemClassName, value)
+function updateElemClassToValue(elemClassName, value)
 {
     var faq = document.getElementsByClassName(elemClassName);
     var i;
@@ -111,26 +111,30 @@ function updateCommRequestElement(elemClassName, value)
 }
 
 /* Keep tiered donation price thresholds in one place */
-function updateAllCommRequestValues() {
+function updateAllDataFields() {
 
+  var eventStartEpoch = 1648243800000;
+  var eventStartString = new Date(eventStartEpoch).toLocaleString();
   var tier3CommDonationUsd = 18;
   var tier2CommDonationUsd = 48;
   var tier1CommDonationUsd = 78;
   var additionalCharacterFactor = 1.5;
   
-  updateCommRequestElement("commTier3", tier3CommDonationUsd);
-  updateCommRequestElement("commTier2", tier2CommDonationUsd);
-  updateCommRequestElement("commTier1", tier1CommDonationUsd);
-  updateCommRequestElement("commTier3mul", tier3CommDonationUsd * additionalCharacterFactor);
-  updateCommRequestElement("commTier2mul", tier2CommDonationUsd * additionalCharacterFactor);
-  updateCommRequestElement("commTier1mul", tier1CommDonationUsd * additionalCharacterFactor);
+  updateElemClassToValue("eventDateTime", eventStartString);
+  
+  updateElemClassToValue("commTier3", tier3CommDonationUsd);
+  updateElemClassToValue("commTier2", tier2CommDonationUsd);
+  updateElemClassToValue("commTier1", tier1CommDonationUsd);
+  updateElemClassToValue("commTier3mul", tier3CommDonationUsd * additionalCharacterFactor);
+  updateElemClassToValue("commTier2mul", tier2CommDonationUsd * additionalCharacterFactor);
+  updateElemClassToValue("commTier1mul", tier1CommDonationUsd * additionalCharacterFactor);
 }
 
 </script>
 
 </head>
 
-<body onload="updateAllCommRequestValues()">
+<body onload="updateAllDataFields()">
     <main>
         <h1 class="faq-heading">Help Cyan &amp; family escape war</h1>
         <section class="faq-container">
@@ -140,7 +144,7 @@ function updateAllCommRequestValues() {
                     <p>We're raising funds to help <a href="https://twitter.com/cyan_square" target="_blank">cyan_square's</a> family migrate from the Ukrainian warzone</p><br/>
                     <p>We are gathering talented artists together to livestream their craft during this fundraising event.</p><br/>
                     <p>All are welcome to hang out, chat &amp; donate to a good cause.</p><br/>
-                    <p>The livestream will host on <a href="https://piczel.tv/watch/Spurple2" target="_blank">Piczel</a> starting at <time datetime="1970-01-01T10:00+10:00">TBA</time> for approximately 8 hours.</p><br/>
+                    <p>The livestream will host on <a href="https://piczel.tv/watch/Spurple2" target="_blank">Piczel</a> starting at <span class="eventDateTime">25th or March 2022, 10:30 pm GMT</span> for approximately 8 hours.</p><br/>
                 </div>
             </div>
             <hr class="hr-line">
@@ -206,7 +210,8 @@ function updateAllCommRequestValues() {
                         </tbody>
                     </table>
                    
-                   <p>At 5 hours from the planned beginning of the stream we will stop accepting new commission requests.</p>
+                   <p><b>Donations submitted before the event officially begins on <span class="eventDateTime">25th or March 2022, 10:30 pm GMT</span> are not eligible for a commission request</b></p>
+                   <p><b>At 5 hours from the planned beginning of the stream we will stop accepting new commission requests.</b></p>
                    
                 </div>
             </div>
@@ -238,7 +243,7 @@ function updateAllCommRequestValues() {
             <div class="faq-six">
                 <h1 class="faq-page" >I donated last stream and got an uncompleted/completed commission, can I submit more requests?</h1>
                 <div class="faq-body">
-                    <p>Multiple requests are okay, but each will require an additional donation.</p><br/>
+                    <p>Multiple requests are allowed, but each will need to be submitted as a separate donation.</p><br/>
 					<p>Any incompleted requests from a previous event will not carry over to future events.</p><br/>
                 </div>
             </div>
